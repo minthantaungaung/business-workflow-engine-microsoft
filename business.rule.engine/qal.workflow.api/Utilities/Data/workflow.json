@@ -1,0 +1,36 @@
+{
+  "WorkFlowCollection": {
+    "ProcessDocument": [
+      {
+        "WorkflowName": "ProcessDocument",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "M1-Rule1",
+            "ErrorMessage": "M1-Rule1 Failed",
+            "Expression": "input.ActionUserRole == \"MAKER_1\" AND input.ActionUserDecisionType == \"Complete\"",
+            "SuccessEvent": "MAKER2"
+          },
+          {
+            "RuleName": "M1-Rule2",
+            "ErrorMessage": "M1-Rule2 Failed",
+            "Expression": "input.ActionUserRole == \"MAKER_1\" AND ReHelper.CheckContains(input.ActionUserDecisionType,input.ListToCheck[0])",
+            "SuccessEvent": "CHECKER"
+          },
+          {
+            "RuleName": "M2-Rule1",
+            "ErrorMessage": "M2-Rule1 Failed",
+            "Expression": "input.ActionUserRole == \"MAKER_2\" AND ReHelper.CheckContains(input.ActionUserDecisionType,input.ListToCheck[1])",
+            "SuccessEvent": "CHECKER"
+          },
+          {
+            "RuleName": "M2-Rule2",
+            "ErrorMessage": "M2-Rule2 Failed",
+            "Expression": "input.ActionUserRole == \"MAKER_1\" AND input.ActionUserDecisionType == \"InComplete\"",
+            "SuccessEvent": "HUAWEI"
+          }
+        ]
+      }
+    ]
+  }
+}

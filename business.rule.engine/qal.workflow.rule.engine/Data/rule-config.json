@@ -1,0 +1,14 @@
+{
+  "WorkFlowSettings": [
+    {
+      "WorkFlowSetting": "ProcessDocument",
+      "ListToCheck": []
+    },
+    {
+      "WorkFlowSetting": "CheckDocument",
+      "ListToCheck": []
+    }
+  ],
+  "ListToCheckSettings": {
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "WorkFlowCollection": {
+    "DocumentProcessWorkFlow": [
+      {
+        "WorkflowName": "Rule1",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "ErrorMessage": "Maker-1 process failed",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"YES\" AND input.GPSNo < 500 AND input.GPSNo > 0",
+            "SuccessEvent": "MAKER2"
+          },
+          {
+            "RuleName": "Rule2",
+            "ErrorMessage": "Maker-1 (Document Blur or Unprocessable)!",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"NO\"",
+            "SuccessEvent": "MOBILEAPP"
+          },
+          {
+            "RuleName": "Rule3",
+            "ErrorMessage": "Maker-1 (Fake Doc)!",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"FAKE\"",
+            "SuccessEvent": "CHECKER"
+          }
+        ]
+      }
+    ]
+  }
+}

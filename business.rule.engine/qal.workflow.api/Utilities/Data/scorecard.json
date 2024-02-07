@@ -1,0 +1,711 @@
+{
+  "WorkFlowCollection": {
+    "LoanFormCreditScoreRule": [
+      {
+        "WorkflowName": "Age",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.Age >= 25 AND input.Age <= 40 ",
+            "ErrorMessage": "Age isn't between 25-40",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.Age >= 41 AND input.Age <= 59 ",
+            "ErrorMessage": "Age isn't between 41-59",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "Gender",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.Gender.ToLower() == \"male\"",
+            "ErrorMessage": "Gender information isn't valid",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.Gender.ToLower() == \"female\"",
+            "ErrorMessage": "Gender information isn't valid",
+            "SuccessEvent": "9",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "Education",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.Education == \"Under Graduate\"",
+            "ErrorMessage": "Education level isn't Under Graduate",
+            "SuccessEvent": "3",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.Education == \"Graduate\"",
+            "ErrorMessage": "Education level isn't Graduate",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.Education == \"Post Graduate\"",
+            "ErrorMessage": "Education level isn't Post Graduate",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.Education == \"Others\"",
+            "ErrorMessage": "Education level isn't chose as Others",
+            "SuccessEvent": "0",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "MartialStatus",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.MartialStatus == \"Single\"",
+            "ErrorMessage": "Martial Status isn't Single",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.MartialStatus == \"Married\"",
+            "ErrorMessage": "Martial Status isn't Married",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.MartialStatus == \"Others\"",
+            "ErrorMessage": "Martial Status isn't chose as Others",
+            "SuccessEvent": "3",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "NoOfDependents",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.NoOfDependents == \"<3\"",
+            "ErrorMessage": "No Of Dependents isn't less than 3",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.NoOfDependents == \"3~5\"",
+            "ErrorMessage": "No Of Dependents isn't between 3 to 5",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.NoOfDependents == \">5\"",
+            "ErrorMessage": "No Of Dependents isn't greater than 5'",
+            "SuccessEvent": "3",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "NoOfWorking",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.NoOfWorking == \"<3\"",
+            "ErrorMessage": "No of working family members isn't less than 3",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.NoOfWorking == \"3~5\"",
+            "ErrorMessage": "No of working family members isn't between 3 to 5",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.NoOfWorking == \"5+\"",
+            "ErrorMessage": "No of working family members isn't greater than 5",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "ResidenceType",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.ResidenceType == \"House\"",
+            "ErrorMessage": "Residence Type isn't House",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.ResidenceType == \"Apartment\"",
+            "ErrorMessage": "Residence Type isn't Apartment",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.ResidenceType == \"Condo\"",
+            "ErrorMessage": "Residence Type isn't Condo",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "ResidenceOwnership",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.ResidenceOwnership == \"Own\"",
+            "ErrorMessage": "Residence Ownership isn't Own status",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.ResidenceOwnership == \"Rent\"",
+            "ErrorMessage": "Residence Ownership isn't Rent status",
+            "SuccessEvent": "8",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "YearAtCurrentAddress",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.YearAtCurrentAddress == \"<3\"",
+            "ErrorMessage": "Years at current address isn't less than 3",
+            "SuccessEvent": "3",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.YearAtCurrentAddress == \"3~5\"",
+            "ErrorMessage": "Years at current address isn't between 3 to 5",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.YearAtCurrentAddress == \"5+\"",
+            "ErrorMessage": "Years at current address isn't greater than 5",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "OtherProperty",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.OtherProperty == \"Car\"",
+            "ErrorMessage": "Other Property isn't Single",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.OtherProperty == \"Cycle\"",
+            "ErrorMessage": "Other Property isn't Married",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.OtherProperty == \"None\"",
+            "ErrorMessage": "Other Property isn't chose as Others",
+            "SuccessEvent": "0",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "YearsInBusiness",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.YearsInBusiness == \"<3\"",
+            "ErrorMessage": "Years in Business isn't less than 3",
+            "SuccessEvent": "3",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.YearsInBusiness == \"3~5\"",
+            "ErrorMessage": "Years in Business isn't between 3 to 5",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.YearsInBusiness == \"5+\"",
+            "ErrorMessage": "Years in Business isn't greater than 5",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "NoOfEmployees",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.NoOfEmployees == \"<3\"",
+            "ErrorMessage": "No of Employees isn't less than 3",
+            "SuccessEvent": "3",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.NoOfEmployees == \"3~5\"",
+            "ErrorMessage": "No of Employees isn't between 3 to 5",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.NoOfEmployees == \"5+\"",
+            "ErrorMessage": "No of Employees isn't greater than 5",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "ShopArea",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.ShopArea < 150",
+            "ErrorMessage": "Shop area isn't less than 150",
+            "SuccessEvent": "4",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.ShopArea >= 150 AND input.ShopArea <= 300",
+            "ErrorMessage": "Shop area isn't between 150 to 300",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.ShopArea > 300",
+            "ErrorMessage": "Shop area isn't greater than 300",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "BuildingType",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.BuildingType == \"Bricks\"",
+            "ErrorMessage": "Building Type isn't with Bricks",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.BuildingType == \"Wood\"",
+            "ErrorMessage": "Building Type isn't with Wood",
+            "SuccessEvent": "8",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "RentalFee",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.RentalFee == \"1M+\"",
+            "ErrorMessage": "Rental Fees isn't between 1M+",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.RentalFee == \"500K~1M\"",
+            "ErrorMessage": "Rental Fees isn't 500K~1M",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.RentalFee == \"100K~500K\"",
+            "ErrorMessage": "Rental Fees isn't between 100K~500K",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.RentalFee == \"<100K\"",
+            "ErrorMessage": "Rental Fees isn't between 1~100K",
+            "SuccessEvent": "4",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "CommercialVehicle",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.CommercialVehicle == \"Yes\"",
+            "ErrorMessage": "Commercial Vehicle isn't chose as YES",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.CommercialVehicle == \"No\"",
+            "ErrorMessage": "Commercial Vehicle isn't chose as NO",
+            "SuccessEvent": "8",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "VehicleCondition",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.VehicleCondition == \"<1year\"",
+            "ErrorMessage": "Vehicle Condition isn't less than 1 Yr",
+            "SuccessEvent": "10",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.VehicleCondition == \"1year ~ 3 year\"",
+            "ErrorMessage": "Vehicle Condition isn't between 1 to 3 Yr",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.VehicleCondition == \"3year ~ 5year\"",
+            "ErrorMessage": "Vehicle Condition isn't between 3 to 5 Yr",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.VehicleCondition == \"5year+\"",
+            "ErrorMessage": "Vehicle Condition isn't greater than 5 Yr",
+            "SuccessEvent": "4",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "BorrowedFromFamilyNFriend",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.BorrowedFromFamilyNFriend.ToLower() == \"yes\"",
+            "ErrorMessage": "isBorrowedFromFamilyNFriend information isn't valid (YES)",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.BorrowedFromFamilyNFriend.ToLower() == \"no\"",
+            "ErrorMessage": "isBorrowedFromFamilyNFriend information isn't valid (NO)",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "BorrowedFromPawnShop",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.BorrowedFromPawnShop.ToLower() == \"yes\"",
+            "ErrorMessage": "IsBorrowedFromPawnShop information isn't valid (YES)",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.BorrowedFromPawnShop.ToLower() == \"no\"",
+            "ErrorMessage": "isBorrowedFromPawnShop information isn't valid (NO)",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "BorrowedFromMFIs",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.BorrowedFromMFIs.ToLower() == \"yes\"",
+            "ErrorMessage": "isBorrowedFromMFIs information isn't valid (YES)",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.BorrowedFromMFIs.ToLower() == \"no\"",
+            "ErrorMessage": "isBorrowedFromMFIs information isn't valid (NO)",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "BorrowedFromOtherBanks",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.BorrowedFromOtherBanks.ToLower() == \"yes\"",
+            "ErrorMessage": "isBorrowedFromOtherBanks information isn't valid (YES)",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.BorrowedFromOtherBanks.ToLower() == \"no\"",
+            "ErrorMessage": "isBorrowedFromOtherBanks information isn't valid (NO)",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "AverageTranxPerMonth",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.AverageTranxPerMonth <= 25 AND input.AverageTranxPerMonth >= 0",
+            "ErrorMessage": "Average Transaction Per Month isn't between 0~25'",
+            "SuccessEvent": "2",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.AverageTranxPerMonth <= 100 AND input.AverageTranxPerMonth >= 26",
+            "ErrorMessage": "Average Transaction Per Month isn't between 26~100'",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.AverageTranxPerMonth <= 600 AND input.AverageTranxPerMonth >= 101",
+            "ErrorMessage": "Average Transaction Per Month isn't between 101~600'",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.AverageTranxPerMonth > 600",
+            "ErrorMessage": "Average Transaction Per Month isn't greater than 600'",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "AverageAccountBalance",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.AverageAccountBalance <= 5000 AND input.AverageAccountBalance >= 0",
+            "ErrorMessage": "Average Account Balance isn't between 0~5000'",
+            "SuccessEvent": "2",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.AverageAccountBalance <= 100000 AND input.AverageAccountBalance >= 5001",
+            "ErrorMessage": "Average Transaction Per Month isn't between 5001~0.1M'",
+            "SuccessEvent": "6",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.AverageAccountBalance <= 10000000 AND input.AverageAccountBalance > 100000",
+            "ErrorMessage": "Average Transaction Per Month isn't between 0.1M~10M'",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.AverageAccountBalance > 10000000",
+            "ErrorMessage": "Average Transaction Per Month isn't greater than >10M'",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      },
+      {
+        "WorkflowName": "AvgBlueTranxValue",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.AvgBlueTranxValue <= 5000 AND input.AvgBlueTranxValue >= 0",
+            "ErrorMessage": "Average Blue App Balance isn't between 0~5000'",
+            "SuccessEvent": "2",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.AvgBlueTranxValue <= 100000 AND input.AvgBlueTranxValue >= 5001",
+            "ErrorMessage": "Average Transaction Per Month isn't between 5001~0.1M'",
+            "SuccessEvent": "5",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.AvgBlueTranxValue <= 1000000 AND input.AvgBlueTranxValue > 100000",
+            "ErrorMessage": "Average Transaction Per Month isn't between 0.1M~1M'",
+            "SuccessEvent": "7",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.AvgBlueTranxValue <= 10000000 AND input.AvgBlueTranxValue > 1000000",
+            "ErrorMessage": "Average Transaction Per Month isn't between 1M~10M'",
+            "SuccessEvent": "8",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule5",
+            "Expression": "input.AvgBlueTranxValue > 10000000",
+            "ErrorMessage": "Average Transaction Per Month isn't greater than >10M'",
+            "SuccessEvent": "10",
+            "Enabled": true
+          }
+        ]
+      }
+    ],
+    "CreditScoreCashLimitRule": [
+      {
+        "WorkflowName": "ScoreCardApprovalLimit",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "Expression": "input.ScoreGrade <= 60",
+            "ErrorMessage": "Score Balance isn't greater than 60",
+            "SuccessEvent": "0",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule2",
+            "Expression": "input.ScoreGrade >= 60.1 AND input.ScoreGrade <= 65",
+            "ErrorMessage": "Score Balance isn't between 60.1~65",
+            "SuccessEvent": "500000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule3",
+            "Expression": "input.ScoreGrade >= 65.1 AND input.ScoreGrade <= 70",
+            "ErrorMessage": "Score Balance isn't between 65.1~70",
+            "SuccessEvent": "750000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule4",
+            "Expression": "input.ScoreGrade >= 70.1 AND input.ScoreGrade <= 75",
+            "ErrorMessage": "Score Balance isn't between 70.1~75",
+            "SuccessEvent": "1000000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule5",
+            "Expression": "input.ScoreGrade >= 75.1 AND input.ScoreGrade <= 80",
+            "ErrorMessage": "Score Balance isn't between 75.1~80",
+            "SuccessEvent": "1500000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule6",
+            "Expression": "input.ScoreGrade >= 80.1 AND input.ScoreGrade <= 85",
+            "ErrorMessage": "Score Balance isn't between 80.1~85",
+            "SuccessEvent": "2000000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule7",
+            "Expression": "input.ScoreGrade >= 85.1 AND input.ScoreGrade <= 90",
+            "ErrorMessage": "Score Balance isn't between 85.1~90",
+            "SuccessEvent": "3000000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule8",
+            "Expression": "input.ScoreGrade >= 90.1 AND input.ScoreGrade <= 95",
+            "ErrorMessage": "Score Balance isn't between 90.1~95",
+            "SuccessEvent": "4000000",
+            "Enabled": true
+          },
+          {
+            "RuleName": "Rule9",
+            "Expression": "input.ScoreGrade >= 95.1 AND input.ScoreGrade <= 100",
+            "ErrorMessage": "Score Balance isn't between 95.1~100",
+            "SuccessEvent": "5000000",
+            "Enabled": true
+          }
+        ]
+      }
+    ]
+  }
+}

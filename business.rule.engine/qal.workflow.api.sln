@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{972F16E5-C5AB-414B-AA16-CC95E6058069}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "qal.workflow.infrastructure", "qal.workflow.infrastructure\qal.workflow.infrastructure.csproj", "{1F0B4206-A152-467E-AA3E-1612C484929B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "qal.workflow.api", "qal.workflow.api\qal.workflow.api.csproj", "{3618CFC4-4365-4E14-BF88-2CD06F687614}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F0B4206-A152-467E-AA3E-1612C484929B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F0B4206-A152-467E-AA3E-1612C484929B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F0B4206-A152-467E-AA3E-1612C484929B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F0B4206-A152-467E-AA3E-1612C484929B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3618CFC4-4365-4E14-BF88-2CD06F687614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3618CFC4-4365-4E14-BF88-2CD06F687614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3618CFC4-4365-4E14-BF88-2CD06F687614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3618CFC4-4365-4E14-BF88-2CD06F687614}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CA50369-329A-4407-B1B5-9FDD588981DB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,105 @@
+//{
+//  "RuleCollection": {
+//    "ProcessDocument": [
+//      {
+//        "WorkflowName": "ProcessDocument",
+//        "Operator": "OrElse",
+//        "Rules": [
+//          {
+//            "RuleName": "Rule1",
+//            "ErrorMessage": "Rule1 Failed",
+//            "Expression": "input.DocumentStatus == \"YES\" AND ReHelper.ExtractOnlyNumber(input.GPS) < 500",
+//            "SuccessEvent": "MAKER2"
+//          },
+//          {
+//            "RuleName": "Rule2",
+//            "ErrorMessage": "Rule2 Failed",
+//            "Expression": "input.DocumentStatus == \"NO\"",
+//            "SuccessEvent": "MOBILEAPP"
+//          },
+//          {
+//            "RuleName": "Rule3",
+//            "ErrorMessage": "Rule3 Failed",
+//            "Expression": "input.DocumentStatus == \"FAKE\"",
+//            "SuccessEvent": "CHECKER"
+//          }
+//        ]
+//      }
+//    ]
+//  }
+//}
+//{
+//  "WorkFlowCollection": {
+//    "DocumentProcessWorkFlow": [
+//      {
+//        "WorkflowName": "Rule1",
+//        "Rules": [
+//          {
+//            "RuleName": "Rule1",
+//            "ErrorMessage": "Maker-1 process failed",
+//            "Enabled": true,
+//            "Expression": "input.DocumentStatus == \"YES\" AND ReHelper.ExtractOnlyNumber(input.GPS) < 500",
+//            "SuccessEvent": "MAKER2"
+//          }
+//        ]
+//      },
+//      {
+//        "WorkflowName": "Rule2",
+//        "Rules": [
+//          {
+//            "RuleName": "Rule2",
+//            "ErrorMessage": "Maker-1 (Document Blur/Unprocessable)!",
+//            "Enabled": true,
+//            "Expression": "input.DocumentStatus == \"NO\"",
+//            "SuccessEvent": "MOBILEAPP"
+//          }
+//        ]
+//      },
+//      {
+//        "WorkflowName": "Rule3",
+//        "Rules": [
+//          {
+//            "RuleName": "Rule3",
+//            "ErrorMessage": "Maker-1 (Fake Doc)!",
+//            "Enabled": true,
+//            "Expression": "input.DocumentStatus == \"FAKE\"",
+//            "SuccessEvent": "CHECKER"
+//          }
+//        ]
+//      }
+//    ]
+//  }
+//}
+
+{
+  "WorkFlowCollection": {
+    "DocumentProcessWorkFlow": [
+      {
+        "WorkflowName": "Rule1",
+        "Rules": [
+          {
+            "RuleName": "Rule1",
+            "ErrorMessage": "Maker-1 process failed",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"YES\" AND ReHelper.ExtractOnlyNumber(input.GPS) < 500",
+            "SuccessEvent": "MAKER2"
+          },
+          {
+            "RuleName": "Rule2",
+            "ErrorMessage": "Maker-1 (Document Blur or Unprocessable)!",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"NO\"",
+            "SuccessEvent": "MOBILEAPP"
+          },
+          {
+            "RuleName": "Rule3",
+            "ErrorMessage": "Maker-1 (Fake Doc)!",
+            "Enabled": true,
+            "Expression": "input.DocumentStatus == \"FAKE\"",
+            "SuccessEvent": "CHECKER"
+          }
+        ]
+      }
+    ]
+  }
+}
